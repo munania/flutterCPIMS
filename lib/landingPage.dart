@@ -30,7 +30,6 @@ class _LandingPageState extends State<LandingPage> {
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData = json.decode(response.body);
         final DashBoardSummary dashboardSummary = DashBoardSummary.fromJson(responseData);
-        // Assuming the dashboard data is returned in the response
         setState(() {
           _dashboardSummary = dashboardSummary;
         });

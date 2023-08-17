@@ -17,8 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   String _errorMessage = '';
 
 Future<void> _login() async {
-  String username = _usernameController.text;
-  String password = _passwordController.text;
+  final String username = _usernameController.text;
+  final String password = _passwordController.text;
 
   const String endpoint = 'https://dev.cpims.net/api/token/';
 
@@ -29,8 +29,6 @@ Future<void> _login() async {
       'password': password,
     },
   );
-
-  print(json.decode(response.body));
 
   if (response.statusCode == 200) {
     final Map<String, dynamic> responseData = json.decode(response.body);
